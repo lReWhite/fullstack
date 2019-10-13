@@ -18,6 +18,11 @@ import {CategoriesPageComponent} from './categories-page/categories-page.compone
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { CategoriesFormComponent } from './categories-page/categories-form/categories-form.component';
 import { PositionsFormComponent } from './categories-page/categories-form/positions-form/positions-form.component';
+import { OrderCategoriesComponent } from './order-page/order-categories/order-categories.component';
+import { OrderPosisionsComponent } from './order-page/order-posisions/order-posisions.component';
+import { HistoryLestComponent } from './history-page/history-lest/history-lest.component';
+import { HistoryListComponent } from './history-page/history-list/history-list.component';
+import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,12 @@ import { PositionsFormComponent } from './categories-page/categories-form/positi
     CategoriesPageComponent,
     LoaderComponent,
     CategoriesFormComponent,
-    PositionsFormComponent
+    PositionsFormComponent,
+    OrderCategoriesComponent,
+    OrderPosisionsComponent,
+    HistoryLestComponent,
+    HistoryListComponent,
+    HistoryFilterComponent
   ],
   imports: [
     BrowserModule,

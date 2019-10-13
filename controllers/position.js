@@ -33,9 +33,7 @@ const position = await new Position({
 }
 module.exports.remove = async function (req, res) {
     try {
-await Position.remove({
-    _id: req.params.id
-})
+await Position.remove({_id: req.params.id})
 req.status(200).json({
     message: 'Позиция была удалена.'
 })

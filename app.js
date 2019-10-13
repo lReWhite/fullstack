@@ -15,7 +15,7 @@ const app = express()
         .catch(error => console.log(error))
 
 app.use (passport.initialize())
-app.use ('/uploads', express.static('uploadsn'))
+app.use ('/uploads', express.static('uploads'))
 require('./middleware/passport')(passport)
 app.use(require('morgan')('dev'))
 app.use(require('cors')())

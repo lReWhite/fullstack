@@ -1,10 +1,10 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {Category,  Message} from "../iterfaces";
-import {Observable} from "rxjs";
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Category,  Message} from '../iterfaces';
+import {Observable} from 'rxjs';
 
 @Injectable({
-   providedIn:'root'
+   providedIn: 'root'
 })
 export class CategoriesService {
 constructor(private http: HttpClient){

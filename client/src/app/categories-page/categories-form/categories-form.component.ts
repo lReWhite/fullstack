@@ -1,12 +1,12 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute, Params, Router, Routes} from "@angular/router";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {CategoriesService} from "../../shared/services/categories.service";
-import {switchMap} from "rxjs/operators";
-import {of} from "rxjs";
-import {MaterialService} from "../../shared/classes/material.service";
-import {Category} from "../../shared/iterfaces";
-import {response} from "express";
+import {ActivatedRoute, Params, Router, Routes} from '@angular/router';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CategoriesService} from '../../shared/services/categories.service';
+import {switchMap} from 'rxjs/operators';
+import {of} from 'rxjs';
+import {MaterialService} from '../../shared/classes/material.service';
+import {Category} from '../../shared/iterfaces';
+
 
 @Component({
   selector: 'app-categories-form',
@@ -30,9 +30,10 @@ export class CategoriesFormComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.form = new FormGroup({
       name: new FormControl(null, Validators.required)
-    })
+    });
 
 
     /*  this.route.params.subscribe((params: Params) => {
@@ -45,18 +46,23 @@ export class CategoriesFormComponent implements OnInit {
       .pipe(
         switchMap(
           (params: Params) => {
-            if (params['id']) {
-              this.isNew = false
-              return this.categoriesService.getById(params['id'])
+            if (params.id) {
+              this.isNew = false;
+              return this.categoriesService.getById(params.id);
             }
-            return of(null)
+            return of(null);
 
           }
         )
       )
+
+
+
+
+
       .subscribe(
         (category: Category) => {
-          this.category = category
+          this.category = category;
           if (category) {
             this.form.patchValue({
               name: category.name
@@ -70,7 +76,7 @@ export class CategoriesFormComponent implements OnInit {
           this.form.enable()
         },
         error => MaterialService.toast(error.error.message)
-      )
+      );
 
   }
 
@@ -83,49 +89,51 @@ export class CategoriesFormComponent implements OnInit {
     if (decision) {
       this.categoriesService.delete(this.category._id)
         .subscribe(
-          response => MaterialService.toast(response.massage),
-          error => MaterialService.toast(error.error.massage),
+          response => MaterialService.toast(response.message),
+          error => MaterialService.toast(error.error.message),
           () => this.router.navigate(['/categories'])
-        )
+        );
     }
   }
 
   onSubmit() {
-    let obs$
-    this.form.disable()
+    let obs$;
+    this.form.disable();
     if (this.isNew) {
       // create
-      obs$ = this.categoriesService.create(this.form.value.name, this.image)
+      obs$ = this.categoriesService.create(this.form.value.name, this.image);
     } else {
-      //update
-      obs$ = this.categoriesService.update(this.category._id, this.form.value.name, this.image)
+      // update
+      obs$ = this.categoriesService.update(this.category._id, this.form.value.name, this.image);
     }
     obs$.subscribe(
       category => {
-        this.category = category
-        MaterialService.toast('Изменения сохранены.')
-        this.form.enable()
+        this.category = category;
+        MaterialService.toast('Изменения сохранены.');
+        this.form.enable();
       },
       error => {
-        MaterialService.toast(error.error.message)
-        this.form.enable()
+        MaterialService.toast(error.error.message);
+        this.form.enable();
       }
-    )
+    );
   }
 
   onFileUpload(event: any) {
 
-    const file = event.target.files[0]
-    this.image = file
-    const reader = new FileReader()
+    const file = event.target.files[0];
+    this.image = file;
+    const reader = new FileReader();
     reader.onload = () => {
 
+
+
       // @ts-ignore
-      this.imagePreview = reader.result
+      this.imagePreview = reader.result;
 
 
-    }
-    reader.readAsDataURL(file)
+    };
+    reader.readAsDataURL(file);
   }
 }
 

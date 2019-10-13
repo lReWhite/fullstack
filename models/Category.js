@@ -7,7 +7,7 @@ name:{
     required:true
 },
 imageSrc:{
-    type:String,
+    type: String,
     default:''
 },
 user:{
