@@ -2,9 +2,7 @@ import {NgModule, OnDestroy, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormControl, FormGroup, FormsModule, Validators} from '@angular/forms';
 import {Routes, RouterModule, Router, ActivatedRoute, Params} from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
 import { LoginPage } from './login.page';
 import {Subscription} from "rxjs";
 import {AuthService} from "../../../../client/src/app/shared/services/auth.service";
@@ -61,7 +59,8 @@ export class LoginPageModule   implements OnInit, OnDestroy{
   onSubmit(){
     this.form.disable()
 
-    this.aSub=this.auth.login(this.form.value).subscribe(
+
+    this.aSub = this.auth.login(this.form.value).subscribe(
         () => this.router.navigate(['/overview']),
         error => {
           MaterialService.toast(error.error.message)
