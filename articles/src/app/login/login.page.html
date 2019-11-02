@@ -6,7 +6,6 @@
 
 
 <ion-content>
-
     <form
             class="card"
             [formGroup]="form"
@@ -16,7 +15,6 @@
             <span class="card-title">Войти в систему</span>
             <div class="input-field">
                 <input
-
                         formControlName="email"
                         id="email"
                         type="email"
@@ -27,7 +25,7 @@
                         class="helper-text red-text"
                         *ngIf= "form.get('email').invalid && form.get('email').touched"
                 >
-                <span *ngIf="form.get('email').errors['required']">Еmail не должен быть пустым</span>
+                <span *ngIf="form.get('email').errors['required']">Е-mail не должен быть пустым</span>
                 <span *ngIf="form.get('email').errors['email']">Введите корректный email адрес</span>
               </span>
             </div>
@@ -61,8 +59,4 @@
             </button>
         </div>
     </form>
-
-
-
-
 </ion-content>

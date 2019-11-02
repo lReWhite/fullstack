@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AuthService} from "../../../../client/src/app/shared/services/auth.service";
+import {AuthService} from "../service/authion.service";
 import {MaterialService} from "../../../../client/src/app/shared/classes/material.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
@@ -11,14 +11,13 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit, OnDestroy{
-  form: FormGroup
-  aSub: Subscription
 
-
+form : FormGroup
 
   constructor(private auth:AuthService, private router: Router, private route: ActivatedRoute) {
 
   }
+
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -40,19 +39,11 @@ export class LoginPage implements OnInit, OnDestroy{
   ngOnDestroy() {
 
 
+
   }
 
   onSubmit(){
-    this.form.disable()
 
-   this.auth.login(this.form.value).subscribe(
-        () => this.router.navigate(['/overview']),
-        error => {
-          MaterialService.toast(error.error.message)
-
-          this.form.enable()
-        }
-    )
   }
 
 }
