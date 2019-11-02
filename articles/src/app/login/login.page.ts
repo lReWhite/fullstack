@@ -38,16 +38,14 @@ export class LoginPage implements OnInit, OnDestroy{
     })
   }
   ngOnDestroy() {
-    if(this.aSub){
-      this.aSub.unsubscribe()
-    }
+
 
   }
 
   onSubmit(){
     this.form.disable()
 
-    this.aSub=this.auth.login(this.form.value).subscribe(
+   this.auth.login(this.form.value).subscribe(
         () => this.router.navigate(['/overview']),
         error => {
           MaterialService.toast(error.error.message)
@@ -58,3 +56,4 @@ export class LoginPage implements OnInit, OnDestroy{
   }
 
 }
+
