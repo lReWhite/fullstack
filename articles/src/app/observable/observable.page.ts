@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MenuController} from "@ionic/angular";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-observable',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObservablePage implements OnInit {
 
-  constructor() { }
+  constructor(private menuCtrl: MenuController,
+              private router: Router) {
+
+  }
 
   ngOnInit() {
+
+  }
+  openMenu() {
+    this.menuCtrl.enable(true, 'menuA')
+        .then(myMenu => {
+          // console.log(myMenu);
+          this.menuCtrl.open('menuA');
+        });
   }
 
 }

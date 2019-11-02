@@ -12,7 +12,9 @@ const routes: Routes = [
   { path: 'analytics', loadChildren: './analytics/analytics.module#AnalyticsPageModule' },
   { path: 'history', loadChildren: './history/history.module#HistoryPageModule' },
   { path: 'add-order', loadChildren: './add-order/add-order.module#AddOrderPageModule' },
-  { path: 'category', loadChildren: './category/category.module#CategoryPageModule' }
+  { path: 'category', loadChildren: './category/category.module#CategoryPageModule' },
+  { path: 'menu-example', loadChildren: './menu-example/menu-example.module#MenuExamplePageModule' },
+
 ];
 @NgModule({
   imports: [
