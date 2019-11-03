@@ -11,7 +11,7 @@
       <ion-button expand="full"  color="warning" href="/analytics">Аналитика</ion-button>
       <ion-button expand="full"  color="warning" href="/history">История</ion-button>
       <ion-button expand="full" color="warning" href="/add-order">Добавление заказа</ion-button>
-      <ion-button expand="full"  color="warning" href="/category">Ассртимент</ion-button>
+      <ion-button expand="full"  color="warning" href="/category">Ассортимент</ion-button>
       <ion-button expand="full"  color="warning" class="out" href="/login">Выход</ion-button>
     </ion-list>
   </ion-content>
@@ -22,7 +22,13 @@
   <!--ion-menu-button autoHide="false" menu="master"></ion-menu-button-->
   <ion-button (click)="openFirst()">
     <ion-icon name="menu" slot="icon-only"></ion-icon>
-  </ion-button>
+  </ion-button>Ассортимент
 </ion-buttons>
 
 <ion-router-outlet main></ion-router-outlet>
+<ion-content>
+  <ion-button color="warning" href="/add-form">Добавить категорию</ion-button>
+  <ion-item-group>
+    <ion-item href="form">Категория 1</ion-item>
+  </ion-item-group>
+</ion-content>

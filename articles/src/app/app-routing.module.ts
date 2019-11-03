@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'add-order', loadChildren: './add-order/add-order.module#AddOrderPageModule' },
   { path: 'category', loadChildren: './category/category.module#CategoryPageModule' },
   { path: 'menu-example', loadChildren: './menu-example/menu-example.module#MenuExamplePageModule' },
+  { path: 'form', loadChildren: './category/form/form.module#FormPageModule' },
+  { path: 'add-form', loadChildren: './category/add-form/add-form.module#AddFormPageModule' },
 
 ];
 @NgModule({

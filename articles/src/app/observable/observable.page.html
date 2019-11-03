@@ -22,7 +22,13 @@
   <!--ion-menu-button autoHide="false" menu="master"></ion-menu-button-->
   <ion-button (click)="openFirst()">
     <ion-icon name="menu" slot="icon-only"></ion-icon>
-  </ion-button>
+  </ion-button> Обзор
 </ion-buttons>
-
 <ion-router-outlet main></ion-router-outlet>
+
+<ion-content>
+   <ion-text class="titleob">Обзор за вчера ({{d | date: 'dd.MM.yyyy'}})</ion-text>
+
+
+
+</ion-content>
