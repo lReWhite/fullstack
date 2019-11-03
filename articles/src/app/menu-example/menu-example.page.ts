@@ -6,8 +6,8 @@ import {MenuController} from "@ionic/angular";
   templateUrl: './menu-example.page.html',
   styleUrls: ['./menu-example.page.scss'],
 })
-export class MenuExamplePage  {
-
+export class MenuExamplePage {
+    povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-cook-chef-logo-or-label.jpg"
   constructor(private menu: MenuController) { }
 
     openFirst() {
@@ -23,5 +23,6 @@ export class MenuExamplePage  {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
   }
+
 
 }

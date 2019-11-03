@@ -8,21 +8,18 @@ import {Router} from "@angular/router";
   styleUrls: ['./observable.page.scss'],
 })
 export class ObservablePage implements OnInit {
-
-  constructor(private menuCtrl: MenuController,
+  povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-cook-chef-logo-or-label.jpg"
+  constructor(private menu: MenuController,
               private router: Router) {
 
   }
-
+  openFirst() {
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+  }
   ngOnInit() {
 
   }
-  openMenu() {
-    this.menuCtrl.enable(true, 'menuA')
-        .then(myMenu => {
-          // console.log(myMenu);
-          this.menuCtrl.open('menuA');
-        });
-  }
+
 
 }
