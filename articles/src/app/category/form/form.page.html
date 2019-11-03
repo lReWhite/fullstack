@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>form</ion-title>
+    <ion-title><ion-text href="/add-form">Изменить категорию</ion-text></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label position="floating">Введите название категории</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-img
+          class="responsive-img h200"
+          [src]="imagePreview"
+          *ngIf="imagePreview"
+  ></ion-img>
+  <ion-button color="warning" (click)="triggerClick()" class="but">Изменить картинку</ion-button>
+  <ion-button color="warning" class="but">Сохранить изменения</ion-button>
 
+  <ion-item-group>
+    <ion-button color="danger"  class="but" (click)="presentAlertConfirm() ">Удалить категорию</ion-button>
+    <ion-item>Позиции: <ion-button color="warning" (click)="presentAlertPrompt2()">Добавить позицию</ion-button></ion-item>
+    <ion-item  ><ion-text (click)="presentAlertPrompt3()">Позиция 1</ion-text><ion-button color="danger"  shape="round" fill="outline" (click)="presentAlertConfirm()"><ion-icon name="pint"></ion-icon></ion-button></ion-item>
+  </ion-item-group>
+
+
+  <ion-button color="danger" href="/category" expand="full"class="cancel">Отмена</ion-button>
+  <input type="file"
+         class="dn"
+         (change)="onFileUpload($event)"
+         #input
+  >
 </ion-content>

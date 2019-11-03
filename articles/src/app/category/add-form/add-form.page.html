@@ -5,17 +5,21 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>Введите название категории:</ion-item>
-  <ion-input></ion-input>
-<ion-button color="warning" (click)="triggerClick()">Добавить картинку</ion-button>
-  <input type="file"
-         class="dn"
-         (change)="onFileUpload($event)"
-         #input
-  >
+  <ion-item>
+    <ion-label position="floating">Введите название категории</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
   <ion-img
           class="responsive-img h200"
           [src]="imagePreview"
           *ngIf="imagePreview"
+  ></ion-img>
+<ion-button color="warning" (click)="triggerClick()" class="but">Добавить картинку</ion-button>
+  <ion-button color="warning" class="but">Сохранить</ion-button>
+  <ion-button color="danger" href="/category" expand="full"class="cancel">Отмена</ion-button>
+  <input type="file"
+         class="dn"
+         (change)="onFileUpload($event)"
+         #input
   >
 </ion-content>
