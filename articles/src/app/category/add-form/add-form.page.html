@@ -7,5 +7,15 @@
 <ion-content>
   <ion-item>Введите название категории:</ion-item>
   <ion-input></ion-input>
-<ion-button color="warning">Добавить картинку</ion-button>
+<ion-button color="warning" (click)="triggerClick()">Добавить картинку</ion-button>
+  <input type="file"
+         class="dn"
+         (change)="onFileUpload($event)"
+         #input
+  >
+  <img
+          class="responsive-img h200"
+          [src]="imagePreview"
+          *ngIf="imagePreview"
+  >
 </ion-content>
