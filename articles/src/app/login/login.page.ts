@@ -44,16 +44,4 @@ povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-coo
 
     }
 
-    OnSubmit() {
-        window.location.href="/observable";
-        this.form.disable()
-        // пока не понял в чем ошибка...
-        this.aSub=this.auth.login(this.form.value).subscribe(
-            () => this.router.navigate(['/overview']),
-            error => {
-                MaterialService.toast(error.error.message)
-
-                this.form.enable()
-            }
-        )
-}}
+}
