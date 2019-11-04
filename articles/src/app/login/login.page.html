@@ -7,7 +7,11 @@
 
 
 <ion-content fullscreen >
-
+    <form
+            class="card"
+            [formGroup]="form"
+            (ngSubmit)="onSubmit()"
+    >
     <ion-item-group >
         <ion-item><ion-img [src]="povar"  ></ion-img></ion-item>
         <ion-item> <ion-label type="undefined">  Введите E-mail: </ion-label></ion-item>
@@ -19,8 +23,8 @@
      <ion-input type="password" id="password"></ion-input>
 
 </ion-item>
-         <ion-button expand="block" (click)="OnSubmit()">Войти</ion-button>
+         <ion-button expand="block" (click)="onSubmit()">Войти</ion-button>
      <ion-button expand="block" href="/register">Регистрация</ion-button>
         </ion-item-group>
-
+    </form>
 </ion-content>
