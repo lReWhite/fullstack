@@ -11,7 +11,7 @@ import {MaterialService} from "../../../../client/src/app/shared/classes/materia
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage {
+export class LoginPage implements OnDestroy, OnInit{
 povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-cook-chef-logo-or-label.jpg"
 
     form: FormGroup
