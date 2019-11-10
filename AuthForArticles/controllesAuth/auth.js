@@ -1,11 +1,15 @@
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const User = require('../../../../fullstack/models/User')
-const keys =require('../../../../fullstack/Config/keys')
-const errorHandler  = require('../../../../fullstack/utils/errorHandler')
+
+const User = require('../../models/User')
+const keys =require('../../Config/keys')
+const errorHandler  = require('../../utils/errorHandler')
+
+
 
 module.exports.login = async function (req, res) {
-    const candidate = await User.findOne({email: req.body.email})
+    const candidate = await  User.findOne({email: req.body.email})
+
     if (candidate) {
         //проверка пароля
         const passwordResult = bcrypt.compareSync(req.body.password, candidate.password)

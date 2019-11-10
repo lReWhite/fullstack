@@ -10,10 +10,13 @@ const orderRoutes =require('./routes/order')
 const positionRoutes =require('./routes/position')
 const keys = require('./Config/keys')
 const app = express()
+const authRoutes2 = require('./AuthForArticles/routesAuth/auth')
 
     mongoose.connect(keys.mongoURI)
         .then(()=> console.log('MongoDB connected'))
         .catch(error => console.log(error))
+
+
 
 app.use (passport.initialize())
 app.use ('/uploads', express.static('uploads'))
@@ -27,7 +30,7 @@ app.use('/api/analytics', analyticsRoutes)
 app.use('/api/category', categoryRoutes)
 app.use('/api/order', orderRoutes)
 app.use('/api/position', positionRoutes)
-
+app.use('/auth2', authRoutes2)
 
 
 if (process.env.NODE_ENV === 'production'){

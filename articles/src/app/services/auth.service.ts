@@ -1,6 +1,6 @@
 import {Inject, Injectable} from "@angular/core";
-import {User} from "../iterfaces";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http"
+import {User} from "../../../../AuthForArticles/iterfaces";
 import {Observable} from "rxjs";
 import {tap} from "rxjs/operators";
 @Injectable({
@@ -14,11 +14,11 @@ export class AuthService {
     }
 
     register(user: User): Observable<User> {
-        return this.http.post<User>('/register', user)
+        return this.http.post<User>('/auth2/register', user)
     }
 
     login(user:User) : Observable<{token: string}>  {
-        return this.http.post<{token:string}>('/login', user)
+        return this.http.post<{token:string}>('/auth2/login', user)
             .pipe(
                 tap(
                     ({token}) => {
