@@ -3,7 +3,8 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {AuthService} from "../services/auth.service";
 import {ActivatedRoute, Params, Router} from "@angular/router";
-import {MaterialService} from "../../../../client/src/app/shared/classes/material.service";
+
+import {MaterialService} from "../classes/material.service";
 
 
 @Component({
@@ -48,12 +49,12 @@ povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-coo
 
         this.form.disable()
 
-        this.aSub=this.auth.login(this.form.value).subscribe(
+        this.aSub= this.auth.login(this.form.value).subscribe(
             () => this.router.navigate(['/observable']),
             error => {
                 MaterialService.toast(error.error.message)
-
                 this.form.enable()
+
             }
         )
     }

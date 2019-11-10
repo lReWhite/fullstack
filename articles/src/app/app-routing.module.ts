@@ -6,7 +6,7 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
-   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+   { path: 'auth2/login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'observable', loadChildren: './observable/observable.module#ObservablePageModule' },
   { path: 'analytics', loadChildren: './analytics/analytics.module#AnalyticsPageModule' },

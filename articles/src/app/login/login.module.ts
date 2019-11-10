@@ -11,14 +11,13 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     component: LoginPage
   }
 ];
 
 @NgModule({
   imports: [
-    HttpClientModule,
     CommonModule,
     FormsModule,
      IonicModule,
