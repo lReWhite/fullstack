@@ -7,6 +7,7 @@ import { LoginPage } from './login.page';
 import {Subscription} from "rxjs";
 import {AuthService} from "../../../../client/src/app/shared/services/auth.service";
 import {MaterialService} from "../../../../client/src/app/shared/classes/material.service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 const routes: Routes = [
   {
@@ -17,9 +18,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    HttpClientModule,
     CommonModule,
     FormsModule,
-    IonicModule,
+     IonicModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule
   ],
