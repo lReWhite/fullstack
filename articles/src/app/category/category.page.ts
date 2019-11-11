@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuController} from "@ionic/angular";
 import {Router} from "@angular/router";
+import {Category} from "../../../../client/src/app/shared/iterfaces";
+import {Observable} from "rxjs";
+import {CategoriesService} from "../services/categories.service";
 
 @Component({
   selector: 'app-category',
@@ -9,7 +12,9 @@ import {Router} from "@angular/router";
 })
 export class CategoryPage implements OnInit {
   povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-cook-chef-logo-or-label.jpg"
+  categories$: Observable<Category[]>
   constructor(private menu: MenuController,
+              private CategoriesService: CategoriesService,
               private router: Router) {
 
   }
@@ -18,6 +23,7 @@ export class CategoryPage implements OnInit {
     this.menu.open('first');
   }
   ngOnInit() {
+    this.categories$ = this.CategoriesService.fetch()
   }
 
 }

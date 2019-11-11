@@ -24,6 +24,7 @@ import { HistoryLestComponent } from './history-page/history-lest/history-lest.c
 import { HistoryListComponent } from './history-page/history-list/history-list.component';
 import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,8 @@ import { HistoryFilterComponent } from './history-page/history-filter/history-fi
     ReactiveFormsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

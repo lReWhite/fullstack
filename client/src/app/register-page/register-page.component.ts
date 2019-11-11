@@ -22,7 +22,7 @@ aSub: Subscription
     })
   }
 onSubmit() {
-  this.form.disable()
+
  this.aSub =this.auth.register(this.form.value).subscribe(
   () =>{
     this.router.navigate(['/login'], {
@@ -34,7 +34,7 @@ onSubmit() {
 error => {
   MaterialService.toast(error.error.message)
 
-  this.form.enable()
+
 
 }
 )

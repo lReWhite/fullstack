@@ -5,7 +5,8 @@ const keys =require('../Config/keys')
 const errorHandler  = require('../utils/errorHandler')
 
 module.exports.login = async function (req, res) {
-const candidate = await User.findOne({email: req.body.email})
+
+    const candidate = await User.findOne({email: req.body.email})
 if (candidate) {
     //проверка пароля
     const passwordResult = bcrypt.compareSync(req.body.password, candidate.password)
@@ -38,6 +39,7 @@ const candidate = await User.findOne({email: req.body.email})
 if (candidate) {
     res.status(409).json({
         message:'Такой email уже занят. Попробуйте другой.'
+
     })
     // Пользователь существует , нужно отдать ошибку
 } else

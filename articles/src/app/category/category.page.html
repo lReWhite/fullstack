@@ -29,6 +29,40 @@
 <ion-content>
     <ion-button color="warning" href="/add-form">Добавить категорию</ion-button>
   <ion-item-group>
+
     <ion-item href="form">Категория 1</ion-item>
+
+
+
+
+
+    <div
+            class="row"
+            *ngIf="categories$ | async as categories;"
+    >
+      <div class="col s12">
+        <div class="collection" *ngIf="categories.length !== 0; else empty">
+          <a *ngFor="let category of categories"
+             [routerLink]="['./', category._id]"
+             class="collection-item">
+            {{category.name}}
+
+          </a>
+        </div>
+        <ng-template #empty>
+          <div class="center">
+            У вас нет ни одной категории
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
   </ion-item-group>
 </ion-content>

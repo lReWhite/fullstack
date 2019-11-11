@@ -16,6 +16,7 @@ export class RegisterPage   implements OnInit, OnDestroy {
   povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-cook-chef-logo-or-label.jpg"
   form: FormGroup
   aSub: Subscription
+
   constructor( private auth: AuthService, private  router: Router) { }
 
   ngOnInit() {
@@ -25,7 +26,7 @@ export class RegisterPage   implements OnInit, OnDestroy {
     })
   }
   onSubmit() {
-    this.form.disable()
+
     this.aSub =this.auth.register(this.form.value).subscribe(
         () =>{
           this.router.navigate(['/login'], {
@@ -35,11 +36,9 @@ export class RegisterPage   implements OnInit, OnDestroy {
           })
         },
         error => {
-          MaterialService.toast(error.error.message)
-
-          this.form.enable()
-
+         MaterialService.toast(error.error.message)
         }
+
     )
   }
   ngOnDestroy()  {
