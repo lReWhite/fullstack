@@ -10,7 +10,7 @@ const orderRoutes =require('./routes/order')
 const positionRoutes =require('./routes/position')
 const keys = require('./Config/keys')
 const app = express()
-const authRoutes2 = require('./AuthForArticles/routesAuth/auth')
+
 
     mongoose.connect(keys.mongoURI)
         .then(()=> console.log('MongoDB connected'))
@@ -26,11 +26,12 @@ app.use(require('cors')())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use('/api/auth', authRoutes)
+
 app.use('/api/analytics', analyticsRoutes)
 app.use('/api/category', categoryRoutes)
 app.use('/api/order', orderRoutes)
 app.use('/api/position', positionRoutes)
-app.use('/auth2', authRoutes2)
+
 
 
 if (process.env.NODE_ENV === 'production'){

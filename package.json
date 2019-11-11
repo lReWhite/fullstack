@@ -13,14 +13,16 @@
     "client-install": "npm install --prefix client",
     "client": "npm run start --prefix client",
     "articles": "npm run start --prefix articles",
+    "articles2": "ionic serve --prefix articles",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "ionic": "concurrently \"npm run server\" \"npm run articles\"",
+    "ionic2": "concurrently \"npm run server\" \"npm run articles2\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run client-install && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@angular/cli": "^8.3.9",
+    "@angular/cli": "^8.3.18",
     "@angular/compiler-cli": "^8.2.10",
     "@angular/language-service": "^8.2.10",
     "angular": "^1.7.8",
