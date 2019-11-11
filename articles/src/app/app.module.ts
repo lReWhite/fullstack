@@ -10,12 +10,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TokenInterceptor} from "../../../client/src/app/shared/classes/token.interceptor";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
 
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule
+  imports: [BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
   providers: [
     StatusBar,
@@ -23,9 +30,9 @@ import {TokenInterceptor} from "../../../client/src/app/shared/classes/token.int
       { provide: RouteReuseStrategy,
         useClass: IonicRouteStrategy,
       },
-      
 
-  ],
+
+              ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
