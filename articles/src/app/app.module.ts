@@ -29,9 +29,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     SplashScreen,
       { provide: RouteReuseStrategy,
         useClass: IonicRouteStrategy,
-      },
-
-
+      }
               ],
   bootstrap: [AppComponent]
 })
