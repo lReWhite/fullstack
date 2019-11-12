@@ -52,6 +52,7 @@ error1: string
 
         this.aSub= this.auth.login(this.form.value).subscribe(
             () =>{
+
                 this.router.navigate(['/observable'])},
             error => {
                 this.error1 = error.error.message
