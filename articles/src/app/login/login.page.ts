@@ -18,7 +18,7 @@ povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-coo
 
     form: FormGroup
     aSub: Subscription
-
+error1: string
     constructor(private auth:AuthService, private router: Router, private route: ActivatedRoute,
                 public toastController: ToastController) {}
 
@@ -49,20 +49,21 @@ povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-coo
 
     }
     onSubmit(){
-        this.form.disable()
-        this.aSub= this.auth.login(this.form.value).subscribe(
-            () => this.router.navigate(['/observable']),
-            error => {
 
-                MaterialService.toast(error.error.message)
-                this.form.enable()
+        this.aSub= this.auth.login(this.form.value).subscribe(
+            () =>{
+                this.router.navigate(['/observable'])},
+            error => {
+                this.error1 = error.error.message
+
+
 
             }
         )
     }
     async presentToast() {
         const toast = await this.toastController.create({
-            message: "",
+            message: this.error1,
             duration: 2000
         });
         toast.present();

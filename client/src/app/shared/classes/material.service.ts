@@ -20,6 +20,7 @@ M.FloatingActionButton.init(ref.nativeElement)
 static updateTextInputs(){
 M.updateTextFields()
 }
+
 static initModal (ref:ElementRef): MaterialInstance{
  return  M.Modal.init(ref.nativeElement)
 }

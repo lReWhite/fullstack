@@ -47,7 +47,7 @@
                 Сейчас {{form.get('password').errors['minlength']['actualLength']}}
                 </span>
               </span></ion-item>
-        <ion-button (click)=" onSubmit()" expand="block" >Зарегистрировать аккаунт</ion-button>
+        <ion-button (click)=" onSubmit()" (click)="presentToast()" expand="block" >Зарегистрировать аккаунт</ion-button>
         <ion-button expand="block" href="/login">Отмена</ion-button>
     </ion-item-group>
     </form>
