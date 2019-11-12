@@ -38,6 +38,7 @@ export class RegisterPage   implements OnInit, OnDestroy {
         },
         error => {
           this.error1 = error.error.message
+          this.presentToast()
         }
 
     )
