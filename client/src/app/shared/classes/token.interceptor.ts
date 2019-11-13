@@ -21,7 +21,7 @@ intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> 
       }
       return next.handle(req).pipe(
       catchError(
-        (error: HttpErrorResponse)=>this.hadleAuthError(error)
+        (error: HttpErrorResponse) => this.hadleAuthError(error)
       )
       )
 }
