@@ -14,7 +14,7 @@
     >
     <ion-item-group >
         <ion-item><ion-img [src]="povar"  ></ion-img></ion-item>
-        <ion-item> <ion-label type="undefined">  Введите E-mail: </ion-label></ion-item>
+        <ion-item> <ion-label >  Введите E-mail: </ion-label></ion-item>
 <ion-item>
      <ion-input type="email" id="email"  formControlName="email"></ion-input>
 </ion-item>
@@ -27,7 +27,7 @@
                 <span *ngIf="form.get('email').errors['email']">Введите корректный email адрес</span>
               </span>
         </ion-item>
-        <ion-item> <ion-label type="undefined">  Введите пароль:</ion-label></ion-item>
+        <ion-item> <ion-label >  Введите пароль:</ion-label></ion-item>
  <ion-item>
      <ion-input type="password" id="password" formControlName="password"></ion-input>
 
@@ -44,7 +44,8 @@
                 </span>
               </span></ion-item>
          <ion-button expand="block" (click)="onSubmit()">Войти</ion-button>
-     <ion-button expand="block" href="/register">Регистрация</ion-button>
+
         </ion-item-group>
     </form>
+
 </ion-content>

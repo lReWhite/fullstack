@@ -4,8 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+    path: 'start',
+    loadChildren: () => import('./start/start.module').then(m => m.StartPageModule)
   },
    { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
@@ -17,6 +17,8 @@ const routes: Routes = [
   { path: 'menu-example', loadChildren: './menu-example/menu-example.module#MenuExamplePageModule' },
   { path: 'form', loadChildren: './category/form/form.module#FormPageModule' },
   { path: 'add-form', loadChildren: './category/add-form/add-form.module#AddFormPageModule' },
+  { path: 'start', loadChildren: './start/start.module#StartPageModule' },
+
 
 ];
 @NgModule({

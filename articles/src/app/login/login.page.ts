@@ -5,6 +5,7 @@ import {Subscription} from "rxjs";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {AuthService} from "../services/auth.service";
 import {MaterialService} from "../classes/material.service";
+import {ToastController} from "@ionic/angular";
 
 
 @Component({
@@ -17,8 +18,11 @@ povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-coo
 
     form: FormGroup
     aSub: Subscription
+error1: string
+    constructor(private auth:AuthService, private router: Router, private route: ActivatedRoute,
+                public toastController: ToastController) {}
 
-    constructor(private auth:AuthService, private router: Router, private route: ActivatedRoute) {}
+
 
     ngOnInit() {
         this.form = new FormGroup({
@@ -46,17 +50,32 @@ povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-coo
     }
     onSubmit(){
 
-
-        this.form.disable()
-
         this.aSub= this.auth.login(this.form.value).subscribe(
-            () => this.router.navigate(['/observable']),
+            () =>{
+
+                this.router.navigate(['/observable'])},
             error => {
-                MaterialService.toast(error.error.message)
-                this.form.enable()
+                this.error1 = error.error.message
+
+                this.presentToast()
 
             }
         )
     }
+    async presentToast() {
+        const toast = await this.toastController.create({
+            message: this.error1,
+            duration: 2000
+        });
+        toast.present();
+    }
+
+
+
+
+
+
+
+
 
 }
