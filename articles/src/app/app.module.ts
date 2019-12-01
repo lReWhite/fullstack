@@ -27,13 +27,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   providers: [
     StatusBar,
     SplashScreen,
-    {
-      provide: HTTP_INTERCEPTORS,
-          useClass: TokenInterceptor
-    },
+
       { provide: RouteReuseStrategy,
         useClass: IonicRouteStrategy,
-        multi: true,
+
       }
 
               ],
