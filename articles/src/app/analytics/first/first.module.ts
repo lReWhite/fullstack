@@ -5,13 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ObservablePage } from './observable.page';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { FirstPage } from './first.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ObservablePage
+    component: FirstPage
   }
 ];
 
@@ -20,10 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-
-      HttpClientModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ObservablePage]
+  declarations: [FirstPage]
 })
-export class ObservablePageModule {}
+export class FirstPageModule {}

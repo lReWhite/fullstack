@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'menu-example', loadChildren: './menu-example/menu-example.module#MenuExamplePageModule' },
   { path: 'form', loadChildren: './category/form/form.module#FormPageModule' },
   { path: 'add-form', loadChildren: './category/add-form/add-form.module#AddFormPageModule' },
-  { path: 'start', loadChildren: './start/start.module#StartPageModule' },
+  { path: 'start', loadChildren: './start/start.module#StartPageModule' },  { path: 'first', loadChildren: './analytics/first/first.module#FirstPageModule' },
+
 
 
 ];
