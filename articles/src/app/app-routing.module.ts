@@ -18,6 +18,9 @@ const routes: Routes = [
   { path: 'form', loadChildren: './category/form/form.module#FormPageModule' },
   { path: 'add-form', loadChildren: './category/add-form/add-form.module#AddFormPageModule' },
   { path: 'start', loadChildren: './start/start.module#StartPageModule' },  { path: 'first', loadChildren: './analytics/first/first.module#FirstPageModule' },
+  { path: 'two', loadChildren: './analytics/two/two.module#TwoPageModule' },
+  { path: 'free', loadChildren: './analytics/free/free.module#FreePageModule' },
+  { path: 'freeff', loadChildren: './analytics/freeff/freeff.module#FreeffPageModule' },
 
 
 
