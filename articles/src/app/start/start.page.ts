@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start.page.scss'],
 })
 export class StartPage implements OnInit {
-  povar = "https://cdn.discordapp.com/attachments/651828634541096970/651829339737817117/rachel-wu-hvPVxVHzmoQ-unsplash.jpg"
+  pictures = "https://cdn.discordapp.com/attachments/651828634541096970/651829339737817117/rachel-wu-hvPVxVHzmoQ-unsplash.jpg"
+  chef = "https://media.discordapp.net/attachments/651828634541096970/651872175392817152/imageedit_1_8532387842.png"
+
   constructor() { }
 
   ngOnInit() {
