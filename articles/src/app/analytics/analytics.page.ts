@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./analytics.page.scss'],
 })
 export class AnalyticsPage implements OnInit {
+  avatar1 = ""
   povar = "https://i.ibb.co/m95gzWW/depositphotos-191208722-stock-illustration-cook-chef-logo-or-label.jpg"
   constructor(private menu: MenuController,
               private router: Router) {

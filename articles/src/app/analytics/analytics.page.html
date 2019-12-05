@@ -20,47 +20,95 @@
 <ion-router-outlet main></ion-router-outlet>
 
 <ion-buttons slot="start">
-  <!--ion-menu-button autoHide="false" menu="master"></ion-menu-button-->
+<!--ion-menu-button autoHide="false" menu="master"></ion-menu-button-->
   <ion-button (click)="openFirst()">
     <ion-icon name="menu" slot="icon-only"></ion-icon>
-  </ion-button></ion-buttons>
+</ion-button></ion-buttons>
 
-<ion-grid>
+
+<ion-grid class="marginLol">
   <ion-row>
     <ion-col>
-<ion-item-group >
-  <ion-text class="alltext">Первые блюда</ion-text>
-<ion-img  class="all" src="https://53news.ru/images/wsscontent/articles/2019/04/kakie-supy-polezny-dlya-lyudej-s-razlichnymi-zabolevaniyami-a-kakie-naoborot-vredny.jpg"></ion-img>
-<ion-item href="/first">Подробно..</ion-item>
-</ion-item-group>
-
-    </ion-col>
-    <ion-col>
-      <ion-item-group >
-      <ion-text class="alltextr">Вторые блюда</ion-text>
-<ion-img class="all" src="http://prigotovim.kz/uploads/posts/2012-10/1350373127_vkusnie-vtorie-bluda.jpg"></ion-img>
-        <ion-item href="/two">Подробно..</ion-item>
-      </ion-item-group>
+      <ion-item href="/first">
+        <ion-avatar slot="start">
+          <ion-img src="https://53news.ru/images/wsscontent/articles/2019/04/kakie-supy-polezny-dlya-lyudej-s-razlichnymi-zabolevaniyami-a-kakie-naoborot-vredny.jpg"></ion-img>
+        </ion-avatar>
+        <ion-label>Первые блюда</ion-label>
+      </ion-item>
     </ion-col>
   </ion-row>
-  <ion-row>
 
+  <ion-row>
     <ion-col>
-      <ion-item-group >
-      <ion-text class="alltext">Десерт</ion-text>
-      <ion-img class="all" src="https://cultura.menu/wp-content/uploads/2018/07/Retsept-Desert-Pavlova-ot-shef-povara-restorana.jpg"></ion-img>
-      <ion-item href="/freeff">Подробно..</ion-item>
-      </ion-item-group>
+      <ion-item href="/two">
+        <ion-avatar slot="start">
+          <ion-img src="http://prigotovim.kz/uploads/posts/2012-10/1350373127_vkusnie-vtorie-bluda.jpg"></ion-img>
+        </ion-avatar>
+        <ion-label>Вторые блюда</ion-label>
+      </ion-item>
     </ion-col>
+  </ion-row>
+
+  <ion-row>
     <ion-col>
-      <ion-item-group >
-      <ion-text class="alltextr">Напитки</ion-text>
-      <ion-img class="all" src="https://img.rg.ru/img/content/172/41/83/iStock-945120950_d_850.jpg"></ion-img>
-      <ion-item href="/freeff">Подробно..</ion-item>
-      </ion-item-group>
+      <ion-item href="/free">
+        <ion-avatar slot="start">
+          <ion-img src="https://cultura.menu/wp-content/uploads/2018/07/Retsept-Desert-Pavlova-ot-shef-povara-restorana.jpg"></ion-img>
+        </ion-avatar>
+        <ion-label>Десерты</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-item href="/freeff">
+        <ion-avatar slot="start">
+          <ion-img src="https://img.rg.ru/img/content/172/41/83/iStock-945120950_d_850.jpg"></ion-img>
+        </ion-avatar>
+        <ion-label>Напитки</ion-label>
+      </ion-item>
     </ion-col>
   </ion-row>
 </ion-grid>
 
+<!--
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-item-group >
+        <ion-text class="alltext">Первые блюда</ion-text>
+      <ion-img  class="all" src="https://53news.ru/images/wsscontent/articles/2019/04/kakie-supy-polezny-dlya-lyudej-s-razlichnymi-zabolevaniyami-a-kakie-naoborot-vredny.jpg"></ion-img>
+      <ion-item href="/first">Подробно..</ion-item>
+      </ion-item-group>
+    </ion-col>
 
+    <ion-col>
+      <ion-item-group >
+      <ion-text class="alltextr">Вторые блюда</ion-text>
+        <ion-img class="all" src="http://prigotovim.kz/uploads/posts/2012-10/1350373127_vkusnie-vtorie-bluda.jpg"></ion-img>
+        <ion-item href="/two">Подробно..</ion-item>
+      </ion-item-group>
 
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+        <ion-item-group >
+        <ion-text class="alltext">Десерт</ion-text>
+        <ion-img class="all" src="https://cultura.menu/wp-content/uploads/2018/07/Retsept-Desert-Pavlova-ot-shef-povara-restorana.jpg"></ion-img>
+        <ion-item href="/free">Подробно..</ion-item>
+        </ion-item-group>
+    </ion-col>
+
+    <ion-col>
+      <ion-item-group>
+        <ion-text class="alltextr">Напитки</ion-text>
+        <ion-img class="all" src="https://img.rg.ru/img/content/172/41/83/iStock-945120950_d_850.jpg"></ion-img>
+        <ion-item href="/freeff">Подробно..</ion-item>
+      </ion-item-group>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+-->
