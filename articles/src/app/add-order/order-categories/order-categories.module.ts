@@ -5,13 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AddOrderPage } from './add-order.page';
-import {OrderService} from "../../../../client/src/app/order-page/order.service";
+import { OrderCategoriesPage } from './order-categories.page';
+import {OrderService} from "../../../../../client/src/app/order-page/order.service";
 
 const routes: Routes = [
   {
     path: '',
-    component: AddOrderPage
+    component: OrderCategoriesPage
   }
 ];
 
@@ -23,6 +23,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   providers: [OrderService],
-  declarations: [AddOrderPage]
+  declarations: [OrderCategoriesPage]
 })
-export class AddOrderPageModule {}
+export class OrderCategoriesPageModule {}

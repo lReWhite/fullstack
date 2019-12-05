@@ -21,6 +21,8 @@ const routes: Routes = [
   { path: 'two', loadChildren: './analytics/two/two.module#TwoPageModule' },
   { path: 'free', loadChildren: './analytics/free/free.module#FreePageModule' },
   { path: 'freeff', loadChildren: './analytics/freeff/freeff.module#FreeffPageModule' },
+  { path: 'order-categories', loadChildren: './add-order/order-categories/order-categories.module#OrderCategoriesPageModule' },
+  { path: 'order-posisions', loadChildren: './add-order/order-posisions/order-posisions.module#OrderPosisionsPageModule' },
 
 
 

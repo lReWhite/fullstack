@@ -1,7 +1,9 @@
 import {Injectable} from "@angular/core";
 import {OrderPosition, Position} from "../shared/iterfaces";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class OrderService {
   public list: OrderPosition[]=[]
   public price: number =0

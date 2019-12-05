@@ -56,6 +56,7 @@ import { HistoryFilterComponent } from './history-page/history-filter/history-fi
 
   ],
   providers: [{
+
     provide: HTTP_INTERCEPTORS,
     multi: true,
     useClass: TokenInterceptor
